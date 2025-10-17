@@ -20,6 +20,8 @@ spec:
           export SITE_API_KEY="{{ .Data.data.api_key }}"
           {{- end -}}
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret # 👈 sekret z danymi do GHCR (utworzony wcześniej)
       containers:
         - name: website
           image: ghcr.io/exea-centrum/website-argocd-k8s-githubactions-kustomize-kyverno01:latest
