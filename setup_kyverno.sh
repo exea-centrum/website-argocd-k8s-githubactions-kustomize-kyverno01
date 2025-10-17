@@ -279,4 +279,4 @@ echo "3. git add . && git commit -m 'init project'"
 echo "4. git push -u origin main"
 echo "5. W ArgoCD: apply argocd/application.yaml"
 echo
-echo "💡 Ustaw sekreta GHCR_PAT w GitHub → Settings → Secrets → Actions"
+echo "💡 Ustaw sekreta GHCR_PAT w GitHub → Settings → Secrets → Actions   "
