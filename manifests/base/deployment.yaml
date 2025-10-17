@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: website
+  template:
+    metadata:
+      labels:
+        app: website
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "davtrokyverno01-role"
+        vault.hashicorp.com/agent-inject-secret-site-creds: "kv/data/davtrokyverno01/site"
+        vault.hashicorp.com/agent-inject-template-site-creds: |
+          {{- with secret "kv/data/davtrokyverno01/site" -}}
+          export SITE_API_KEY="{{ .Data.data.api_key }}"
+          {{- end -}}
+    spec:
+      containers:
+        - name: website
+          image: ghcr.io/exea-centrum/website-argocd-k8s-githubactions-kustomize-kyverno01:latest
+          ports:
+            - containerPort: 80

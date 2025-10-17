@@ -1,0 +1,9 @@
+{
+  "name": "website-argocd-k8s-githubactions-kustomize-kyverno01",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cp -r src/* dist/ || true"
+  },
+  "dependencies": {}
+}
