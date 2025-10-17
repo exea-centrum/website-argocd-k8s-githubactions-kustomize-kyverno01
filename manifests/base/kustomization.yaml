@@ -10,4 +10,4 @@ namespace: davtrokyverno01
 images:
   - name: ghcr.io/exea-centrum/website-argocd-k8s-githubactions-kustomize-kyverno01
     newName: ghcr.io/exea-centrum/website-argocd-k8s-githubactions-kustomize-kyverno01
-    newTag: latest
+    newTag: f2c6778aa2d0c75b6add0372f77bbb405e90bf12
