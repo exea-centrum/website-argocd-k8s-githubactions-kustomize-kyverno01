@@ -23,6 +23,8 @@ zmienne środowiskowe / secrety które musisz ustawić w GitHub Secrets
 Poniżej znajdziesz strukturę projektu i pełne pliki do wklejenia.
 
 Struktura repozytorium (proponowana)
+
+```bash
 .
 ├─ Dockerfile
 ├─ package.json
@@ -44,10 +46,13 @@ Struktura repozytorium (proponowana)
 └─ policies/
 └─ kyverno-no-latest-tag.yaml
 
+```
+
 1. Prosty frontend — pliki
 
 package.json
 
+```bash
 {
 "name": "website-simple-argocd-k8s-github-kustomize",
 "version": "1.0.0",
@@ -57,9 +62,11 @@ package.json
 },
 "dependencies": {}
 }
+```
 
-src/index.html
+#### src/index.html
 
+```bash
 <!doctype html>
 <html>
   <head>
@@ -80,6 +87,7 @@ src/index.html
     </div>
   </body>
 </html>
+```
 
 Dockerfile
 
@@ -136,6 +144,7 @@ spec:
 
 manifests/base/service.yaml
 
+```bash
 apiVersion: v1
 kind: Service
 metadata:
@@ -340,6 +349,7 @@ spec:
 containers: - image: "!*:*latest\*"
 
 Zalecam zainstalować Kyverno w klastrze microk8s (microk8s enable kyverno jeśli dostępne lub Helm chart).
+```
 
 6. Vault integration (przykład)
 
